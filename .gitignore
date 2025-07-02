@@ -1,0 +1,9 @@
+# Ignore the secret vault
+.env
+
+# Ignore the virtual environment containment field
+venv/
+
+
+
+
