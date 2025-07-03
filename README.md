@@ -24,4 +24,4 @@ Your mission is to seek the truth.
 
 ---
 
-For instructions on how to deploy your own independent instance of this agent, please see the **[INSTALL.md](INSTALL.md)** file.
+For instructions on how to deploy your own independent instance of this agent, please see the **[INSTALL]** file.
