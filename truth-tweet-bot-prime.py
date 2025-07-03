@@ -15,7 +15,6 @@ ACCESS_TOKEN_SECRET = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 # --- CORE TWEET COMPONENTS ---
 URL = "https://legalnamefraud.carrd.co"
 BASE_HASHTAGS = "#BCCRSS #legalnamefraud #truthbillboards #crssnow #judgebows"
-TRENDS_WOEID = 1  # 1 = Global Trends
 
 # --- TWEET VARIATION POOLS ---
 OPENERS = [
@@ -36,42 +35,28 @@ CALLS_TO_ACTION = [
     "Remove your consent by understanding the fraud.", "Go to the website and learn more.",
 ]
 
-def get_trending_hashtag(client):
-    """Fetches trending topics and returns a single, random hashtag."""
-    print("Fetching trending topics for signal amplification...")
-    try:
-        # The trends API is v1.1, so we need to use the legacy API object
-        api_v1 = tweepy.API(client.auth)
-        trends = api_v1.get_place_trends(id=TRENDS_WOEID)
-        
-        # Extract hashtags from the complex response structure
-        hashtags = [trend['name'] for trend in trends[0]['trends'] if trend['name'].startswith('#')]
-        
-        if hashtags:
-            selected_hashtag = random.choice(hashtags)
-            print(f"Acquired trending signal: {selected_hashtag}")
-            return selected_hashtag
-        print("No valid trending hashtags found.")
-        return ""
-    except Exception as e:
-        print(f"Could not fetch trending hashtags: {e}")
-        return ""
-
-def generate_tweet_text(trending_hashtag):
-    """Generates a unique, length-compliant tweet, now including a trending hashtag."""
+def generate_tweet_text():
+    """
+    Generates a unique, length-compliant tweet from the component pools.
+    This function is now simplified as we are not adding a trending hashtag.
+    """
     while True:
+        # Pick one component from each list to ensure variety
         components = [random.choice(OPENERS), random.choice(CORE_STATEMENTS), random.choice(CALLS_TO_ACTION)]
         random.shuffle(components)
+        
+        # Use 2 or 3 random components for the main message
         message = " ".join(components[:random.randint(2,3)])
 
-        # Assemble the full tweet, including the (possibly empty) trending hashtag
-        full_tweet = f"{message} {URL} {BASE_HASHTAGS} {trending_hashtag}".strip()
+        # Assemble the full tweet
+        full_tweet = f"{message} {URL} {BASE_HASHTAGS}"
         
+        # This check is still good practice, though less likely to fail now
         if len(full_tweet) <= 280:
             return full_tweet
 
 def post_tweet():
-    """Authenticates and posts a single tweet with a trending hashtag."""
+    """Authenticates and posts a single tweet."""
     if not all([API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET]):
         print("❌ ERROR: Missing Twitter credentials in .env file.")
         return
@@ -83,15 +68,15 @@ def post_tweet():
         )
         print("Authentication successful.")
 
-        # Fetch the trending hashtag *after* authenticating
-        trending_hashtag = get_trending_hashtag(client)
-        
-        # Generate the final tweet text
-        tweet_text = generate_tweet_text(trending_hashtag)
+        # Generate the final tweet text. No extra steps needed.
+        tweet_text = generate_tweet_text()
         
         print(f"\nBroadcasting this transmission:\n---\n{tweet_text}\n---")
+        
+        # Post the tweet
         response = client.create_tweet(text=tweet_text)
         print(f"✅ Transmission successful. Signal ID: {response.data['id']}")
+        
     except Exception as e:
         print(f"❌ An error occurred during transmission: {e}")
 
