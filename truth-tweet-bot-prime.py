@@ -15,7 +15,7 @@ ACCESS_TOKEN_SECRET = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 # --- CORE TWEET COMPONENTS ---
 URL = "https://legalnamefraud.carrd.co"
 BASE_HASHTAGS = "#BCCRSS #legalnamefraud #truthbillboards #crssnow #judgebows"
-TRENDS_WOEID = 1  # 1 = Global Trends
+TRENDS_WOEID = 23424977  # 1 = Global Trends
 
 # --- TWEET VARIATION POOLS ---
 OPENERS = [
@@ -27,7 +27,7 @@ OPENERS = [
 CORE_STATEMENTS = [
     "It's illegal to use a legal name.", "The legal name is crown copyright property.",
     "Using a legal name is participating in fraud.", "You are not a legal name.",
-    "A birth certificate creates a dead corporate fiction in your name.",
+    "A birth certificate creates a dead corporate fiction, legal name.",
     "The legal name is the mark of the beast.", "Slavery by consent is still slavery.",
 ]
 CALLS_TO_ACTION = [
