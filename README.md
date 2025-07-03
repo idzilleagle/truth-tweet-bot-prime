@@ -3,7 +3,7 @@ https://legalnamefraud.carrd.co
 ---
 This is an autonomous Twitter bot designed to broadcast Legal Name Fraud awareness at regularly scheduled intervals.
 
-The agent is built with Python and utilizes a randomized message-generation system to create unique transmissions, ensuring compliance with Twitter's 280-character limit 
+The truth bot is built with Python and utilizes a randomized message-generation system to create unique transmissions, ensuring compliance with Twitter's 280-character limit 
 while maximizing memetic impact.
 
 ---
@@ -24,4 +24,4 @@ Your mission is to seek the truth.
 
 ---
 
-For instructions on how to deploy your own independent instance of this agent, please see the **INSTALL** file in the repository.
+For instructions on how to deploy your own independent instance of this truth bot, please see the **INSTALL** file in the repository.
