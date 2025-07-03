@@ -15,7 +15,7 @@ ACCESS_TOKEN_SECRET = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 # --- CORE TWEET COMPONENTS ---
 URL = "https://legalnamefraud.carrd.co"
 BASE_HASHTAGS = "#BCCRSS #legalnamefraud #truthbillboards #crssnow #judgebows"
-TRENDS_WOEID = 23424977  # 1 = Global Trends
+TRENDS_WOEID = 1  # 1 = Global Trends
 
 # --- TWEET VARIATION POOLS ---
 OPENERS = [
