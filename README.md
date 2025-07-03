@@ -19,7 +19,7 @@ Understanding this is the first step toward knowing just who you really are. You
 
 Your mission is to seek the truth.
 1.  **Read the #BCCRSS.**
-2.  **Go to [https://legalnamefraud.carrd.co to learn more.**
+2.  **Go to https://legalnamefraud.carrd.co to learn more.**
 3.  **Share this knowledge.**
 
 ---
