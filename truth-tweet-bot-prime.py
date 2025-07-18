@@ -21,7 +21,7 @@ OPENERS = [
     "The truth is simple:", "Quick reminder:", "They don't want you to know this:",
     "Did you know?", "Here's a thought for your day:", "Unplug from the matrix:",
     "Consider this:", "The system is based on this deception:", "Fact check this:",
-    "It's hidden in plain sight:", "Time to wake up.", "Here is a foundational truth:",
+    "It's hidden in plain sight:", "Time to wake up.", "Here's the truth:",
 ]
 CORE_STATEMENTS = [
     "It's illegal to use a legal name.", "The legal name is crown copyright property.",
